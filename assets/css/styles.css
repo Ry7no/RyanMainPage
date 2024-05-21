@@ -93,6 +93,7 @@ body.dark-theme {
     --container-color: hsl(var(--hue-color), 29%, 16%);
     --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+    --container-color: hsl(var(--hue-color), 30%, 18%);
 }
 
 
@@ -609,12 +610,16 @@ img {
     width: 90%;
 }
 
+.skills__flutter {
+    width: 90%;
+}
+
 .skills__swift {
     width: 80%;
 }
 
 .skills__java {
-    width: 50%;
+    width: 70%;
 }
 
 .skills__html {
@@ -731,7 +736,7 @@ img {
 }
 
 .portfolio__content {
-    background-color: #FFF;
+    background-color: var(--container-color);
     border-radius: .5rem;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
