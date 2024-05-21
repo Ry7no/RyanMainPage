@@ -159,3 +159,79 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// 獲取模態窗口元素
+var modal = document.getElementById('myModal');
+
+// 獲取關閉按鈕元素
+var span = document.getElementsByClassName('close')[0];
+
+// 更新模態窗口的內容並顯示
+function updateModal(title, description, link) {
+    const modalTitle = document.querySelector('.modal-title');
+    const modalDescription = document.querySelector('.modal-description');
+    const modalButton = document.querySelector('.modal-button');
+
+    // 更新內容
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    modalButton.href = link;
+
+    // 顯示模態窗口
+    modal.style.display = 'block';
+}
+
+// 綁定點擊事件到所有需要打開模態窗口的按鈕
+document.querySelectorAll('.portfolio__data .button-link-modal').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault(); // 防止鏈接默認行為
+
+        const title = this.getAttribute('data-title');
+        const description = this.getAttribute('data-description');
+        const link = this.getAttribute('data-link');
+
+        updateModal(title, description, link); // 更新並顯示模態窗口
+    });
+});
+
+// 當用戶點擊關閉按鈕時，關閉模態窗口
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// 當用戶點擊模態窗口外部時，也關閉模態窗口
+window.onclick = function(event) {
+    if (event.target == modal || event.target === span || event.target.parentNode === span) {
+        modal.style.display = 'none';
+    }
+}
+
+/*
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.querySelector('.portfolio__data .button-link');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close')[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function(event) {
+    event.preventDefault(); // Prevent link default action
+    modal.style.display = 'block';
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+    if (event.target == modal || event.target.className === 'close') {
+        modal.style.display = 'none';
+    }
+}
+*/
