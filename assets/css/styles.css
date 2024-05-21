@@ -1024,6 +1024,10 @@ img {
         margin-right: auto;
     }
 
+    .modal-content {
+        width: 70%;
+    }
+
     body{
         margin: 0;
     }
@@ -1278,9 +1282,30 @@ img {
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Adjust width for smaller screens */
+    width: 60%; /* Adjust width for smaller screens */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 85%; /* 小屏幕上使用更寬的寬度 */
+        padding: 15px; /* 調整內邊距 */
+        margin-top: 20%; /* 可能需要調整邊距以適應螢幕 */
+    }
+
+    .modal-title {
+        margin-bottom: 8px;
+        font-size: 19px;
+    }
+
+    .modal-description {
+        font-size: 14px;
+    }
+
+    .modal-button {
+        margin-top: 20px;
+    }
 }
 
 .close {
